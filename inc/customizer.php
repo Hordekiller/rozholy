@@ -128,4 +128,29 @@ function rozholy_customize_register($wp_customize) {
         'section'  => 'rozholy_dashboard',
         'type'     => 'dropdown-pages',
     ]);
+
+    /* ── Motion Section ── */
+    $wp_customize->add_section('rozholy_motion', [
+        'title'    => esc_html__('Motion & Effects', 'rozholy'),
+        'panel'    => 'rozholy_theme_options',
+        'priority' => 60,
+        'description' => esc_html__('کنترل شدت انیمیشن‌ها و افکت‌های بصری', 'rozholy'),
+    ]);
+
+    $wp_customize->add_setting('rozholy_motion_intensity', [
+        'default'           => 'full',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ]);
+
+    $wp_customize->add_control('rozholy_motion_intensity', [
+        'label'    => esc_html__('Motion Intensity', 'rozholy'),
+        'section'  => 'rozholy_motion',
+        'type'     => 'select',
+        'choices'  => [
+            'full'   => esc_html__('Full (recommended)', 'rozholy'),
+            'subtle' => esc_html__('Subtle', 'rozholy'),
+            'off'    => esc_html__('Off', 'rozholy'),
+        ],
+    ]);
 }

@@ -1,19 +1,19 @@
 <?php
 /**
- * Title: نظرات مشتریان
+ * Title: Testimonials
  * Slug: rozholy/testimonials
  * Categories: rozholy, testimonials
- * Description: نمایش نظرات مشتریان در قالب کارت‌های امتیازدار
+ * Description: Customer testimonials in glass cards with staggered reveal
  */
 ?>
-<!-- wp:group {"backgroundColor":"base","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}}}} -->
-<div class="wp-block-group has-base-background-color has-background" style="padding-top:80px;padding-bottom:80px">
+<!-- wp:group {"backgroundColor":"base","style":{"spacing":{"padding":{"top":"clamp(4rem, 10vh, 9rem)","bottom":"clamp(4rem, 10vh, 9rem)"}}}} -->
+<div class="wp-block-group has-base-background-color has-background" style="padding-top:clamp(4rem, 10vh, 9rem);padding-bottom:clamp(4rem, 10vh, 9rem)">
   <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
   <div class="wp-block-group">
     <!-- wp:group {"layout":{"type":"constrained","contentSize":"600px"},"style":{"spacing":{"margin":{"bottom":"50px"}}}} -->
-    <div class="wp-block-group" style="margin-bottom:50px">
-      <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"2.5rem"}}} -->
-      <h2 class="wp-block-heading has-text-align-center" style="font-size:2.5rem">نظرات مشتریان</h2>
+    <div class="wp-block-group" style="margin-bottom:50px" data-reveal="fade-up">
+      <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"clamp(2rem, 5vw, 2.5rem)"}}} -->
+      <h2 class="wp-block-heading has-text-align-center" style="font-size:clamp(2rem, 5vw, 2.5rem)"><span class="text-gradient">نظرات مشتریان</span></h2>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph {"align":"center","textColor":"text-light","style":{"typography":{"fontSize":"1.1rem"}}} -->
@@ -25,9 +25,9 @@
     <!-- wp:columns {"style":{"spacing":{"blockGap":"24px"}}} -->
     <div class="wp-block-columns">
       <!-- wp:column -->
-      <div class="wp-block-column">
-        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white"} -->
-        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
+      <div class="wp-block-column" data-reveal="fade-up" data-reveal-delay="1">
+        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white","className":"glass-card"} -->
+        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color glass-card" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
           <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#c8a87c"}}} -->
           <p class="has-text-color" style="color:#c8a87c;font-size:1.1rem">⭐⭐⭐⭐⭐</p>
           <!-- /wp:paragraph -->
@@ -38,8 +38,8 @@
 
           <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"12px"}}} -->
           <div class="wp-block-group">
-            <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#d4a0a0"}}}},"textColor":"primary"} -->
-            <p class="has-primary-color has-text-color has-link-color" style="font-size:2rem">🌹</p>
+            <!-- wp:paragraph {"textColor":"primary","style":{"typography":{"fontSize":"2rem"}}} -->
+            <p class="has-primary-color has-text-color" style="font-size:2rem">🌹</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:group -->
@@ -61,9 +61,9 @@
       <!-- /wp:column -->
 
       <!-- wp:column -->
-      <div class="wp-block-column">
-        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white"} -->
-        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
+      <div class="wp-block-column" data-reveal="fade-up" data-reveal-delay="2">
+        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white","className":"glass-card"} -->
+        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color glass-card" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
           <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#c8a87c"}}} -->
           <p class="has-text-color" style="color:#c8a87c;font-size:1.1rem">⭐⭐⭐⭐⭐</p>
           <!-- /wp:paragraph -->
@@ -97,9 +97,9 @@
       <!-- /wp:column -->
 
       <!-- wp:column -->
-      <div class="wp-block-column">
-        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white"} -->
-        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
+      <div class="wp-block-column" data-reveal="fade-up" data-reveal-delay="3">
+        <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"35px","right":"30px","bottom":"35px","left":"30px"}}},"borderColor":"border","backgroundColor":"white","className":"glass-card"} -->
+        <div class="wp-block-group has-white-background-color has-background has-border-color has-border-border-color glass-card" style="border-width:1px;border-radius:16px;padding-top:35px;padding-right:30px;padding-bottom:35px;padding-left:30px">
           <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#c8a87c"}}} -->
           <p class="has-text-color" style="color:#c8a87c;font-size:1.1rem">⭐⭐⭐⭐⭐</p>
           <!-- /wp:paragraph -->
@@ -110,7 +110,7 @@
 
           <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"12px"}}} -->
           <div class="wp-block-group">
-            <!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem"},"color":{"text":"#c8a87c"}}} -->
+            <!-- wp:paragraph {"style":{"color":{"text":"#c8a87c"},"typography":{"fontSize":"2rem"}}} -->
             <p class="has-text-color" style="color:#c8a87c;font-size:2rem">✨</p>
             <!-- /wp:paragraph -->
 

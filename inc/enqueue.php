@@ -11,8 +11,13 @@ function rozholy_enqueue_scripts() {
 
     wp_enqueue_style('rozholy-animations', ROZHOLY_URI . '/assets/css/animations.css', ['rozholy-style'], ROZHOLY_VERSION);
     wp_enqueue_style('rozholy-responsive', ROZHOLY_URI . '/assets/css/responsive.css', ['rozholy-style'], ROZHOLY_VERSION);
+    wp_enqueue_style('rozholy-wow', ROZHOLY_URI . '/assets/css/wow.css', ['rozholy-style'], ROZHOLY_VERSION);
 
-    wp_enqueue_script('rozholy-navigation', ROZHOLY_URI . '/assets/js/navigation.js', [], ROZHOLY_VERSION, true);
+    wp_enqueue_script('rozholy-navigation', ROZHOLY_URI . '/assets/js/navigation.js', [], ROZHOLY_VERSION, array('strategy' => 'defer'));
+
+    if (! is_page_template('page-dashboard.php') && ! is_customize_preview()) {
+        wp_enqueue_script('rozholy-wow', ROZHOLY_URI . '/assets/js/wow.js', [], ROZHOLY_VERSION, array('strategy' => 'defer'));
+    }
 
     if (is_page_template('page-dashboard.php')) {
         wp_enqueue_style('rozholy-dashboard', ROZHOLY_URI . '/assets/css/dashboard.css', ['rozholy-style'], ROZHOLY_VERSION);

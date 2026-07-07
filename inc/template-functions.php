@@ -47,5 +47,11 @@ function rozholy_excerpt_more($more) {
 add_filter('body_class', 'rozholy_body_classes');
 function rozholy_body_classes($classes) {
     if (is_rtl()) $classes[] = 'rtl';
+
+    $motion = get_theme_mod('rozholy_motion_intensity', 'full');
+    if ($motion !== 'full') {
+        $classes[] = 'motion-' . $motion;
+    }
+
     return $classes;
 }
