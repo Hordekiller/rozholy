@@ -49,6 +49,11 @@ body {
   top: 32px;
 }
 
+.no-sticky-header .site-header,
+.site-header--no-sticky {
+  position: static !important;
+}
+
 /* Header transparent variant */
 .site-header--transparent {
   position: absolute !important;

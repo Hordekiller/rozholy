@@ -7,8 +7,12 @@
   var overlay = document.querySelector('.wp-block-navigation__responsive-container');
 
   /* ── Sticky header shadow on scroll ── */
+  var body = document.body;
+
   function handleScroll() {
     if (!header) return;
+    if (body.classList.contains('no-sticky-header')) return;
+
     if (window.scrollY > 20) {
       header.classList.add('is-sticky');
     } else {
