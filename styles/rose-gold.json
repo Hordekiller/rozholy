@@ -1,0 +1,65 @@
+{
+  "version": 3,
+  "title": "Rose Gold",
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "primary", "name": "Primary", "color": "#e8a0a0" },
+        { "slug": "primary-dark", "name": "Primary Dark", "color": "#d48080" },
+        { "slug": "primary-light", "name": "Primary Light", "color": "#fce8e8" },
+        { "slug": "secondary", "name": "Secondary", "color": "#c8a8d0" },
+        { "slug": "secondary-dark", "name": "Secondary Dark", "color": "#a880b8" },
+        { "slug": "accent", "name": "Accent", "color": "#d4b88c" },
+        { "slug": "accent-light", "name": "Accent Light", "color": "#f0e4d0" },
+        { "slug": "base", "name": "Base", "color": "#fdf8f5" },
+        { "slug": "base-alt", "name": "Base Alt", "color": "#faf0ea" },
+        { "slug": "dark", "name": "Dark", "color": "#3a2030" },
+        { "slug": "text", "name": "Text", "color": "#5a4a50" },
+        { "slug": "text-light", "name": "Text Light", "color": "#8a7a80" },
+        { "slug": "border", "name": "Border", "color": "#f0e0d8" },
+        { "slug": "white", "name": "White", "color": "#fffafa" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#fdf8f5",
+      "text": "#5a4a50"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "#3a2030"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#e8a0a0",
+          "text": "#ffffff"
+        },
+        ":hover": {
+          "color": {
+            "background": "#d48080"
+          }
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#d48080"
+        },
+        ":hover": {
+          "color": {
+            "text": "#e8a0a0"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/post-title": {
+        "color": {
+          "text": "#3a2030"
+        }
+      }
+    }
+  }
+}

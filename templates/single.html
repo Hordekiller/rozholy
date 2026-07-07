@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
+<main class="wp-block-group" style="padding-top:40px;padding-bottom:40px">
+  <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","right":"0","left":"0"}},"border":{"radius":"16px"},"overflow":"hidden"}} -->
+  <div class="wp-block-group" style="border-radius:16px;overflow:hidden;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+    <!-- wp:post-featured-image /-->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"18px","margin":{"top":"20px","bottom":"20px"}}},"textColor":"text-light","fontSize":"small"} -->
+  <div class="wp-block-group has-text-light-color has-text-color has-small-font-size" style="margin-top:20px;margin-bottom:20px">
+    <!-- wp:post-date /-->
+    <!-- wp:post-author /-->
+    <!-- wp:post-terms {"term":"category"} /-->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:post-title /-->
+
+  <!-- wp:post-content /-->
+
+  <!-- wp:group {"style":{"spacing":{"padding":{"top":"25px","bottom":"25px"},"margin":{"top":"30px","bottom":"0"}},"border":{"top":{"color":"var:preset|color|border","width":"1px"},"bottom":{"color":"var:preset|color|border","width":"1px"}}}} -->
+  <div class="wp-block-group" style="border-top-color:var:preset|color|border;border-top-width:1px;border-bottom-color:var:preset|color|border;border-bottom-width:1px;margin-top:30px;margin-bottom:0;padding-top:25px;padding-bottom:25px">
+    <!-- wp:post-terms {"term":"post_tag"} /-->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:post-navigation-link {"type":"previous","label":"قبلی"} /-->
+  <!-- wp:post-navigation-link {"type":"next","label":"بعدی"} /-->
+
+  <!-- wp:comments -->
+  <div class="wp-block-comments" style="margin-top:40px">
+    <!-- wp:comments-title /-->
+    <!-- wp:comment-template /-->
+    <!-- wp:comments-pagination /-->
+    <!-- wp:post-comments-form /-->
+  </div>
+  <!-- /wp:comments -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

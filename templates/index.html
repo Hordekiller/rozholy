@@ -1,0 +1,40 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<main class="wp-block-group" style="padding-top:40px;padding-bottom:40px">
+  <!-- wp:query {"queryId":0,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template {"style":{"spacing":{"blockGap":"28px"}},"layout":{"type":"grid","columnCount":3}} -->
+      <!-- wp:group {"style":{"border":{"radius":"16px","width":"1px"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"borderColor":"border","className":"blog-card"} -->
+      <div class="wp-block-group blog-card has-border-color has-border-border-color" style="border-width:1px;border-radius:16px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+        <!-- wp:post-featured-image {"height":"240px","style":{"border":{"radius":{"topLeft":"16px","topRight":"16px"}}}} /-->
+
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"25px","right":"25px","bottom":"25px","left":"25px"}}}} -->
+        <div class="wp-block-group" style="padding-top:25px;padding-right:25px;padding-bottom:25px;padding-left:25px">
+          <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"12px"}},"textColor":"text-light","fontSize":"small"} -->
+          <div class="wp-block-group has-text-light-color has-text-color has-small-font-size">
+            <!-- wp:post-date /-->
+            <!-- wp:post-terms {"term":"category"} /-->
+          </div>
+          <!-- /wp:group -->
+
+          <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"1.2rem"}}} /-->
+
+          <!-- wp:post-excerpt {"moreText":"ادامه مطلب","excerptLength":20} /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+      <!-- wp:query-pagination-previous /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+  </div>
+  <!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
