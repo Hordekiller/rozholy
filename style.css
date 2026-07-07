@@ -1,0 +1,248 @@
+/*
+Theme Name: Rozholy
+Theme URI: https://github.com/solo/rozholy
+Author: ThemeFire
+Author URI: https://themefire.dev
+Description: قالب حرفه‌ای و مدرن برای آرایشگاه‌ها، سالن‌های زیبایی و اسپا. سازگار با المنتور و ووکامرس. مناسب کسب‌وکارهای زنانه با قابلیت رزرو آنلاین، گالری خدمات و فروشگاه محصولات.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rozholy
+Domain Path: /languages
+Tags: elementor, woocommerce, beauty, salon, spa, rtl-language, right-to-left, feminine, responsive, custom-header, custom-logo, custom-menu, featured-images, theme-options, blog, e-commerce
+
+Rozholy WordPress Theme, (C) 2025 ThemeFire
+Rozholy is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+:root {
+  --rz-primary: #d4a0a0;
+  --rz-primary-dark: #c08080;
+  --rz-primary-light: #f0d0d0;
+  --rz-secondary: #b8a0c0;
+  --rz-secondary-dark: #9870a8;
+  --rz-accent: #c8a87c;
+  --rz-accent-light: #e8d0b8;
+  --rz-dark: #2d2d2d;
+  --rz-text: #4a4a4a;
+  --rz-text-light: #7a7a7a;
+  --rz-bg: #faf5f0;
+  --rz-bg-alt: #f5ece4;
+  --rz-bg-dark: #1e1e2a;
+  --rz-white: #ffffff;
+  --rz-border: #e8ddd5;
+  --rz-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --rz-shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+  --rz-radius: 16px;
+  --rz-radius-sm: 8px;
+  --rz-radius-full: 999px;
+  --rz-font-primary: 'Vazirmatn', 'IRANSans', 'Tahoma', sans-serif;
+  --rz-font-display: 'Playfair Display', 'Vazirmatn', serif;
+  --rz-font-accent: 'Dancing Script', cursive;
+  --rz-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--rz-font-primary);
+  color: var(--rz-text);
+  background: var(--rz-bg);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--rz-primary-dark);
+  text-decoration: none;
+  transition: var(--rz-transition);
+}
+
+a:hover {
+  color: var(--rz-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--rz-font-display);
+  color: var(--rz-dark);
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rz-primary), var(--rz-secondary));
+  margin: 15px auto 0;
+  border-radius: var(--rz-radius-full);
+}
+
+.section-title p {
+  color: var(--rz-text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--rz-radius-full);
+  font-family: var(--rz-font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--rz-transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--rz-primary), var(--rz-primary-dark));
+  color: var(--rz-white);
+  box-shadow: 0 4px 15px rgba(212, 160, 160, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 160, 160, 0.5);
+  color: var(--rz-white);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--rz-primary-dark);
+  border: 2px solid var(--rz-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--rz-primary);
+  color: var(--rz-white);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--rz-accent), #b8986c);
+  color: var(--rz-white);
+  box-shadow: 0 4px 15px rgba(200, 168, 124, 0.4);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 168, 124, 0.5);
+  color: var(--rz-white);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--rz-white);
+  border: 2px solid rgba(255,255,255,0.6);
+}
+
+.btn-outline-light:hover {
+  background: var(--rz-white);
+  color: var(--rz-dark);
+}
+
+.rz-floating-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.07;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--rz-primary);
+  top: -50px;
+  right: -80px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--rz-secondary);
+  bottom: -40px;
+  left: -60px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--rz-accent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+@media (max-width: 1024px) {
+  .section { padding: 60px 0; }
+  .section-title h2 { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 40px 0; }
+  .section-title h2 { font-size: 1.6rem; }
+  .btn { padding: 12px 24px; font-size: 0.9rem; }
+}

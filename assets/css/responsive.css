@@ -1,0 +1,243 @@
+/* Rozholy Responsive Stylesheet */
+
+@media (max-width: 1024px) {
+  .rz-services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rz-hero-title {
+    font-size: 3rem;
+  }
+
+  .rz-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rz-gallery-grid[data-layout="masonry"] {
+    columns: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-info .topbar-worktime {
+    display: none;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-inner {
+    padding: 12px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-navigation {
+    order: 3;
+  }
+
+  .primary-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--rz-white);
+    flex-direction: column;
+    padding: 15px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--rz-border);
+    z-index: 100;
+  }
+
+  .primary-menu.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  .primary-menu > li > a {
+    padding: 12px 20px;
+  }
+
+  .primary-menu > li > a::after {
+    display: none;
+  }
+
+  .primary-menu .sub-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: var(--rz-bg-alt);
+    padding: 0;
+    margin: 0 20px;
+    border-radius: var(--rz-radius-sm);
+    display: none;
+  }
+
+  .primary-menu .sub-menu.open {
+    display: block;
+  }
+
+  .primary-menu .sub-menu .sub-menu {
+    top: 0;
+    right: 0;
+  }
+
+  .rz-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .rz-hero-section {
+    min-height: 60vh;
+  }
+
+  .rz-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .rz-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .rz-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rz-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rz-gallery-grid[data-layout="masonry"] {
+    columns: 1;
+  }
+
+  .rz-booking-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  .rz-booking-row {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .single-title {
+    font-size: 1.5rem;
+  }
+
+  .single-thumbnail-overlay {
+    padding: 20px 15px;
+  }
+
+  .single-footer-meta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .single-post-nav {
+    flex-direction: column;
+  }
+
+  .content-layout {
+    padding: 20px 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .error-404-section {
+    padding: 60px 0;
+  }
+
+  .error-404-search form {
+    flex-direction: column;
+  }
+
+  .search-no-results form {
+    flex-direction: column;
+  }
+
+  .sticky-cta {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .sticky-cta-btn {
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rz-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .rz-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .topbar-social {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .topbar,
+  .site-header,
+  .sticky-cta,
+  .footer-wave {
+    display: none;
+  }
+
+  .site-footer {
+    background: none;
+    color: #000;
+  }
+
+  .footer-contact-list a {
+    color: #000;
+  }
+}

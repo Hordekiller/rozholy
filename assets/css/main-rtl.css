@@ -1,0 +1,104 @@
+/* Rozholy RTL Overrides */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .primary-menu > li > a::after {
+  left: auto;
+  right: 18px;
+}
+
+.rtl .primary-menu .sub-menu {
+  right: 0;
+  left: auto;
+}
+
+.rtl .primary-menu .sub-menu .sub-menu {
+  right: 100%;
+  left: auto;
+}
+
+.rtl .primary-menu .menu-item-has-children > a::after {
+  margin-left: 0;
+  margin-right: 6px;
+}
+
+.rtl .blog-card-link:hover svg {
+  transform: rotate(180deg) translateX(4px);
+}
+
+.rtl .post-nav-next {
+  text-align: right;
+}
+
+.rtl .post-nav-item a {
+  flex-direction: row-reverse;
+}
+
+.rtl .post-nav-prev a svg {
+  transform: rotate(180deg);
+}
+
+.rtl .post-nav-next a svg {
+  transform: rotate(180deg);
+}
+
+.rtl .sidebar .widget-title::after {
+  right: 0;
+  left: auto;
+}
+
+.rtl .sidebar ul li a:hover {
+  padding-right: 0;
+  padding-left: 5px;
+}
+
+.rtl .footer-links a:hover {
+  padding-right: 0;
+  padding-left: 8px;
+}
+
+.rtl .sticky-cta {
+  left: auto;
+  right: 24px;
+}
+
+.rtl .single-meta {
+  flex-direction: row-reverse;
+}
+
+.rtl .header-cart-count {
+  right: auto;
+  left: 0;
+}
+
+.rtl .menu-toggle-icon span {
+  left: auto;
+  right: 0;
+}
+
+.rtl .menu-toggle.active .menu-toggle-icon span:nth-child(2) {
+  transform: translateX(10px);
+}
+
+.rtl .rz-gallery-zoom {
+  left: auto;
+  right: 50%;
+  transform: translate(50%, -50%) scale(0);
+}
+
+.rtl .rz-gallery-item:hover .rz-gallery-zoom {
+  transform: translate(50%, -50%) scale(1);
+}
+
+.rtl .single-content blockquote {
+  border-right: 4px solid var(--rz-primary);
+  border-left: 0;
+  padding: 15px 25px;
+}
+
+.rtl .footer-social .social-icon {
+  margin-left: 0;
+  margin-right: 0;
+}

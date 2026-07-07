@@ -1,0 +1,14 @@
+/* Rozholy Editor Styles */
+body {
+  font-family: var(--rz-font-primary);
+  color: var(--rz-text);
+}
+
+.editor-post-title__input {
+  font-family: var(--rz-font-display);
+  color: var(--rz-dark);
+}
+
+.block-editor-block-list__block {
+  font-family: var(--rz-font-primary);
+}
