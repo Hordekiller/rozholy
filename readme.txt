@@ -1,61 +1,57 @@
 === Rozholy ===
 Contributors: themefire
-Requires at least: 6.0
+Requires at least: 6.5
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-قالب حرفه‌ای و مدرن وردپرس برای آرایشگاه‌ها، سالن‌های زیبایی و اسپا با سازگاری کامل با المنتور و ووکامرس.
+A premium WordPress block theme for beauty salons, hair studios, and spas. Full Site Editing (FSE), feminine palette, WooCommerce, RTL/Persian support.
 
 == Description ==
 
-Rozholy یک قالب حرفه‌ای و کاملاً ریسپانسیو برای آرایشگاه‌ها، سالن‌های زیبایی، اسپا و کسب‌وکارهای مرتبط با زیبایی است. این قالب با آخرین استانداردهای وردپرس، المنتور و ووکامرس ساخته شده و از زبان فارسی (RTL) پشتیبانی کامل می‌کند.
+Rozholy is a modern, fully responsive WordPress block theme built specifically for beauty salons, hair studios, spas, skincare clinics, and wellness businesses.
 
-= ویژگی‌های اصلی =
+Built with Full Site Editing (FSE), it features a feminine rose-gold color palette, WooCommerce integration, Persian/RTL support, user dashboard, and Elementor compatibility.
 
-* طراحی مدرن و زنانه با پالت رنگی صورتی، بنفش و طلایی
-* سازگاری کامل با صفحه‌ساز المنتور
-* پشتیبانی کامل از ووکامرس (فروشگاه آنلاین)
-* فرم رزرو نوبت آنلاین با ذخیره در دیتابیس
-* گالری تصاویر با فیلتر دسته‌بندی (ماسونری و گرید)
-* ۵ ویجت اختصاصی المنتور
-* ۳ ویجت سفارشی برای نوار کناری و فوتر
-* هدر چسبنده با نوار بالای اطلاعات
-* فوتر با موج گرافیکی و ۴ ستون
-* پشتیبانی کامل از زبان فارسی (RTL)
-* دکمه CTA چسبنده برای تماس سریع در موبایل
-* انیمیشن‌های ورود و افکت‌های تعاملی
-* بهینه‌سازی شده برای سرعت و سئو
-* کدگذاری تمیز و استاندارد
+= Key Features =
+
+* Full Site Editing (FSE) — edit every part visually
+* Feminine color palette (rose, gold, purple)
+* WooCommerce ready with custom-styled storefront
+* Persian / RTL support
+* 6 block patterns (hero, services, testimonials, gallery, booking, contact)
+* 3 style variations (default, dark, rose-gold)
+* User dashboard with profile, security, activity tabs
+* Elementor compatibility (canvas + full-width templates)
+* WOW UI effects: glassmorphism, 3D tilt cards, scroll animations
+* Motion intensity control (full / subtle / off)
+* Mini-cart fragment updates via AJAX
+* Customizer settings (colors, header, footer, social links)
+* Security hardening (XML-RPC off, version hidden, login errors unified)
+* Responsive at 360px / 768px / 1024px / 1200px
+* Child theme included for safe customizations
 
 == Installation ==
 
-1. پوشه `rozholy` را به مسیر `/wp-content/themes/` آپلود کنید.
-2. از طریق پیشخوان وردپرس > نمایش > پوسته‌ها، قالب Rozholy را فعال کنید.
-3. برای سفارشی‌سازی رنگ‌ها و تنظیمات، به بخش سفارشی‌سازی مراجعه کنید.
-4. برای تنظیم منوها، به بخش نمایش > منوها مراجعه کنید.
-5. ویجت‌ها را در نمایش > ویجت‌ها به مناطق مورد نظر اضافه کنید.
-
-= نصب افزونه‌های پیشنهادی =
-
-* Elementor (برای ساخت صفحات با درگ‌انددراپ)
-* WooCommerce (برای فروشگاه آنلاین)
-* WooCommerce Persian (برای سازگاری ووکامرس با فارسی)
-
-== Frequently Asked Questions ==
-
-= آیا این قالب از زبان فارسی پشتیبانی می‌کند؟ =
-بله، قالب Rozholy به صورت کامل از زبان فارسی و راست‌چین (RTL) پشتیبانی می‌کند.
-
-= آیا برای المنتور مناسب است؟ =
-بله، قالب Rozholy با ۵ ویجت اختصاصی المنتور و پشتیبانی کامل از لوکیشن‌های المنتور طراحی شده است.
-
-= چگونه فرم رزرو نوبت را فعال کنم؟ =
-ویجت اختصاصی "فرم رزرو Rozholy" را در صفحه مورد نظر با المنتور قرار دهید. تنظیمات ایمیل دریافت نوتیفیکیشن در همان ویجت قابل تنظیم است.
+1. Upload the `rozholy` folder to `/wp-content/themes/`
+2. Activate from **Appearance > Themes**
+3. (Optional) Install companion plugin for booking management
 
 == Changelog ==
 
+= 2.0.0 =
+* Converted to Full Site Editing (FSE) block theme
+* Added theme.json v3 with WPDS-aligned design tokens
+* Added 9 FSE templates, 6 patterns, 3 style variations
+* Added user dashboard (profile, security, activity)
+* Added Elementor compatibility
+* Added WOW UI effects (glassmorphism, scroll animations, 3D tilt)
+* Added Customizer settings (colors, header, social links, motion control)
+* Security hardening and performance optimization
+
 = 1.0.0 =
-* انتشار اولیه قالب Rozholy
+* Initial release with classic PHP templates
+* Elementor + WooCommerce integration
+* Persian/RTL support

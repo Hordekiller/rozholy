@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 /**
  * Title: Hero Section
  * Slug: rozholy/hero-section

@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 /**
  * Title: Services Grid
  * Slug: rozholy/services-grid

@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 /**
  * Title: Booking Form
  * Slug: rozholy/booking-form
