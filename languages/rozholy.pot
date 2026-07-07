@@ -1,0 +1,274 @@
+# Copyright (C) 2025 ThemeFire
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rozholy 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Hordekiller/rozholy/issues\n"
+"Last-Translator: ThemeFire\n"
+"Language-Team: none\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: inc/setup.php:46
+msgid "منوی اصلی"
+msgstr ""
+
+#: inc/setup.php:47
+msgid "منوی فوتر"
+msgstr ""
+
+#: inc/customizer.php:13
+msgid "Rozholy Settings"
+msgstr ""
+
+#: inc/customizer.php:15
+msgid "تنظیمات اختصاصی قالب Rozholy"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Header Layout"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Default (Solid)"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Transparent"
+msgstr ""
+
+#: inc/customizer.php:76
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: inc/customizer.php:94
+msgid "Social Links"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Telegram URL"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "WhatsApp URL"
+msgstr ""
+
+#: inc/customizer.php:104
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/customizer.php:116
+msgid "User Dashboard"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "Dashboard Page"
+msgstr ""
+
+#: inc/dashboard.php:37
+msgid "Invalid request."
+msgstr ""
+
+#: inc/dashboard.php:54
+msgid "Invalid file type. Please upload JPEG, PNG, GIF, or WebP."
+msgstr ""
+
+#: inc/dashboard.php:59
+msgid "You do not have permission to upload files."
+msgstr ""
+
+#: inc/dashboard.php:67
+msgid "Avatar upload failed."
+msgstr ""
+
+#: inc/dashboard.php:129
+msgid "نظر"
+msgstr ""
+
+#: inc/dashboard.php:131
+msgid "مشاهده"
+msgstr ""
+
+#: inc/dashboard.php:154
+msgid "مطلب"
+msgstr ""
+
+#: inc/dashboard.php:156
+msgstr ""
+
+#: inc/dashboard.php:178
+msgid "Avatar"
+msgstr ""
+
+#: inc/dashboard.php:191
+msgid "هنوز سفارشی ثبت نکرده‌اید."
+msgstr ""
+
+#: inc/dashboard.php:195
+msgid "هنوز نظری ثبت نکرده‌اید."
+msgstr ""
+
+#: inc/dashboard.php:199
+msgid "هنوز مطلبی ننوشته‌اید."
+msgstr ""
+
+#: inc/dashboard.php:203
+msgid "هنوز فعالیتی ندارید."
+msgstr ""
+
+#: inc/dashboard.php:204
+msgid "موردی یافت نشد."
+msgstr ""
+
+#: inc/security.php:12
+msgid "اطلاعات وارد شده صحیح نیست. لطفا دوباره تلاش کنید."
+msgstr ""
+
+#: inc/security.php:30
+msgid "You must be logged in to access this endpoint."
+msgstr ""
+
+#: page-dashboard.php:22
+msgid "داشبورد کاربری"
+msgstr ""
+
+#: page-dashboard.php:28
+msgid "خوش آمدید، %s"
+msgstr ""
+
+#: page-dashboard.php:35
+msgid "پروفایل با موفقیت به‌روزرسانی شد."
+msgstr ""
+
+#: page-dashboard.php:39
+msgid "رمز عبور فعلی اشتباه است."
+msgstr ""
+
+#: page-dashboard.php:40
+msgid "رمز عبور جدید و تکرار آن مطابقت ندارند."
+msgstr ""
+
+#: page-dashboard.php:41
+msgid "خطایی رخ داده است."
+msgstr ""
+
+#: template-parts/dashboard/sidebar.php:9
+msgid "پروفایل"
+msgstr ""
+
+#: template-parts/dashboard/sidebar.php:10
+msgid "امنیت"
+msgstr ""
+
+#: template-parts/dashboard/sidebar.php:11
+msgid "فعالیت‌ها"
+msgstr ""
+
+#: template-parts/dashboard/sidebar.php:37
+msgid "خروج"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:12
+msgid "ویرایش پروفایل"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:24
+msgid "تغییر تصویر"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:27
+msgid "JPEG, PNG, GIF, WebP"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:31
+msgid "نام نمایشی"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:36
+msgid "ایمیل"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:39
+msgid "ایمیل قابل تغییر نیست."
+msgstr ""
+
+#: template-parts/dashboard/profile.php:43
+msgid "درباره من"
+msgstr ""
+
+#: template-parts/dashboard/profile.php:49
+msgid "ذخیره تغییرات"
+msgstr ""
+
+#: template-parts/dashboard/security.php:7
+msgid "تغییر رمز عبور"
+msgstr ""
+
+#: template-parts/dashboard/security.php:14
+msgid "رمز عبور فعلی"
+msgstr ""
+
+#: template-parts/dashboard/security.php:19
+msgid "رمز عبور جدید"
+msgstr ""
+
+#: template-parts/dashboard/security.php:22
+msgid "حداقل ۸ کاراکتر"
+msgstr ""
+
+#: template-parts/dashboard/security.php:27
+msgid "تکرار رمز عبور جدید"
+msgstr ""
+
+#: template-parts/dashboard/security.php:33
+msgid "تغییر رمز عبور"
+msgstr ""
+
+#: template-parts/dashboard/activity.php:26
+msgid "نظرات"
+msgstr ""
+
+#: template-parts/dashboard/activity.php:30
+msgid "مطالب"
+msgstr ""
+
+#: template-parts/dashboard/activity.php:49
+msgid "بیشتر"
+msgstr ""
+
+#: template-parts/dashboard/activity.php:67
+msgstr ""
+
+#: template-parts/dashboard/activity.php:76
+msgstr ""
