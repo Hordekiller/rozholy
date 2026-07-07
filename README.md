@@ -172,7 +172,7 @@ GNU General Public License v2.0 or later. See [LICENSE](LICENSE).
 
 ```
 Rozholy WordPress Theme
-Copyright (C) 2025 ThemeFire
+Copyright (C) 2026 HordeKiller
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
