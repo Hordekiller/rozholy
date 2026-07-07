@@ -184,10 +184,9 @@ of the License, or (at your option) any later version.
 
 ## Author
 
-**ThemeFire** — built for the WordPress community
+**Hordekiller** — built for the WordPress community
 
-- 🌐 [themefire.dev](https://themefire.dev)
-- 📧 hello@themefire.dev
+- 🌐 [github.com/Hordekiller](https://github.com/Hordekiller)
 
 ---
 

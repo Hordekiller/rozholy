@@ -1,5 +1,5 @@
 === Rozholy ===
-Contributors: themefire
+Contributors: hordekiller
 Requires at least: 6.5
 Tested up to: 6.7
 Requires PHP: 7.4
