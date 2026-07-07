@@ -33,12 +33,61 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
+/* Sticky header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.site-header.is-sticky {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.admin-bar .site-header {
+  top: 32px;
+}
+
 /* Header transparent variant */
 .site-header--transparent {
   position: absolute !important;
   width: 100%;
   z-index: 100;
   background: transparent !important;
+}
+
+.site-header--transparent.is-sticky {
+  position: fixed !important;
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: headerSlideDown 0.3s ease;
+}
+
+@keyframes headerSlideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Elementor compatibility */
+.elementor-canvas .site-header,
+.elementor-canvas .site-footer {
+  display: none;
+}
+
+.rozholy-elementor-main {
+  max-width: 100%;
+  width: 100%;
+}
+
+.rozholy-elementor .wp-block-group,
+.rozholy-elementor .wp-block-columns {
+  max-width: 100% !important;
+}
+
+.rozholy-elementor-content {
+  min-height: 50vh;
 }
 
 /* Smooth scroll */

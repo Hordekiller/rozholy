@@ -13,6 +13,7 @@ $rozholy_includes = [
     'inc/security.php',
     'inc/woocommerce.php',
     'inc/dashboard.php',
+    'inc/elementor.php',
 ];
 
 foreach ($rozholy_includes as $file) {
