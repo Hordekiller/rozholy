@@ -1,0 +1,182 @@
+@media (max-width: 767px) {
+  .rz-bottom-nav {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 64px;
+    height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .rz-bottom-nav {
+      background: rgba(255, 255, 255, 0.98);
+    }
+  }
+
+  .rz-bottom-nav.is-hidden {
+    transform: translateY(100%);
+  }
+
+  .rz-bottom-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+    height: 64px;
+    padding: 0 4px;
+    position: relative;
+    gap: 2px;
+  }
+
+  .rz-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 8px 4px;
+    min-width: 56px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #7a7a7a;
+    transition: color 0.2s;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rz-nav-item:active {
+    transform: scale(0.92);
+  }
+
+  .rz-nav-item svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: currentColor;
+    transition: fill 0.2s;
+  }
+
+  .rz-nav-item .rz-nav-label {
+    font-size: 0.6rem;
+    line-height: 1;
+    font-weight: 500;
+    color: inherit;
+    transition: color 0.2s;
+  }
+
+  .rz-nav-item.is-active {
+    color: #d4a0a0;
+  }
+
+  .rz-nav-item.is-active .rz-nav-label {
+    color: #d4a0a0;
+  }
+
+  .rz-nav-item .rz-nav-indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    background: #d4a0a0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .rz-nav-item.is-active .rz-nav-indicator {
+    opacity: 1;
+  }
+
+  .rz-nav-fab {
+    position: relative;
+    top: -16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4a0a0, #c08080);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(212, 160, 160, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+  }
+
+  .rz-nav-fab:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 8px rgba(212, 160, 160, 0.3);
+  }
+
+  .rz-nav-fab svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    display: block;
+  }
+
+  .rz-nav-fab-pulse {
+    animation: fabPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fabPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(212, 160, 160, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(212, 160, 160, 0.7); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rz-bottom-nav { transition: none; }
+    .rz-nav-fab-pulse { animation: none; }
+    .rz-nav-item:active { transform: none; }
+    .rz-nav-fab:active { transform: none; }
+  }
+
+  .rz-nav-cart-badge {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 8px;
+    background: #d4a0a0;
+    color: #fff;
+    font-size: 0.55rem;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .rz-bottom-nav {
+    display: none !important;
+  }
+}
+
+body.has-bottom-nav {
+  padding-bottom: 64px;
+  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+}

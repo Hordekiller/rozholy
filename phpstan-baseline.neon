@@ -1,0 +1,2107 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function body_class not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function do_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function get_permalink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function have_posts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function language_attributes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function the_content not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function the_post not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function wp_body_open not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function wp_footer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function wp_head not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function wp_safe_redirect not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-canvas.php
+
+		-
+			message: '#^Function get_footer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-header-footer.php
+
+		-
+			message: '#^Function get_header not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-header-footer.php
+
+		-
+			message: '#^Function have_posts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-header-footer.php
+
+		-
+			message: '#^Function the_content not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: elementor-header-footer.php
+
+		-
+			message: '#^Function the_post not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: elementor-header-footer.php
+
+		-
+			message: '#^Function wp_footer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: footer.php
+
+		-
+			message: '#^Function get_footer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: front-page.php
+
+		-
+			message: '#^Function get_header not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: front-page.php
+
+		-
+			message: '#^Function have_posts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: front-page.php
+
+		-
+			message: '#^Function the_content not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: front-page.php
+
+		-
+			message: '#^Function the_post not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: front-page.php
+
+		-
+			message: '#^Function get_template_directory not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: functions.php
+
+		-
+			message: '#^Function get_template_directory_uri not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: functions.php
+
+		-
+			message: '#^Function bloginfo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: header.php
+
+		-
+			message: '#^Function body_class not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: header.php
+
+		-
+			message: '#^Function language_attributes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: header.php
+
+		-
+			message: '#^Function wp_body_open not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: header.php
+
+		-
+			message: '#^Function wp_head not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: header.php
+
+		-
+			message: '#^Class Rozholy_Range_Control does not have a constructor and must be instantiated without any parameters\.$#'
+			identifier: new.noConstructor
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 106
+			path: inc/customizer.php
+
+		-
+			message: '#^Function absint not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/customizer.php
+
+		-
+			message: '#^Function esc_url_raw not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function sanitize_hex_color not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function sanitize_text_field not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/customizer.php
+
+		-
+			message: '#^Function wp_kses not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function wp_kses_post not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/customizer.php
+
+		-
+			message: '#^Function wp_strip_all_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Instantiated class WP_Customize_Color_Control not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/customizer.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function absint not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function add_query_arg not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function check_ajax_referer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function current_user_can not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function esc_attr not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function esc_attr__ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_avatar not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_comment_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_comment_link not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_comments not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_current_user_id not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_permalink not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_posts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_the_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_the_title not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function get_user_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function home_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function is_user_logged_in not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function is_wp_error not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function media_handle_upload not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function sanitize_file_name not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function sanitize_key not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function sanitize_mime_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function sanitize_text_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function sanitize_textarea_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function setup_postdata not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function update_user_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_check_password not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_die not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_get_attachment_image_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_get_current_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_get_referer not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_login_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_logout not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_safe_redirect not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_send_json_error not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_send_json_success not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_set_password not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_trim_words not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_unslash not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_update_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/dashboard.php
+
+		-
+			message: '#^Function wp_verify_nonce not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/dashboard.php
+
+		-
+			message: '#^Constant ROZHOLY_URI not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: inc/elementor.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Function add_theme_support not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/elementor.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Function get_option not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/elementor.php
+
+		-
+			message: '#^Function get_the_ID not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Function is_front_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Function remove_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/elementor.php
+
+		-
+			message: '#^Function wp_enqueue_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/elementor.php
+
+		-
+			message: '#^Constant ROZHOLY_URI not found\.$#'
+			identifier: constant.notFound
+			count: 12
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function WC not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function admin_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function comments_open not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function get_option not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function get_stylesheet_uri not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_admin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_customize_preview not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_page_template not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_rtl not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_singular not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function is_woocommerce not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function wp_create_nonce not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function wp_enqueue_script not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function wp_enqueue_style not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/enqueue.php
+
+		-
+			message: '#^Function wp_localize_script not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/enqueue.php
+
+		-
+			message: '#^Call to method add_data\(\) on an unknown class WP_Scripts\.$#'
+			identifier: class.notFound
+			count: 3
+			path: inc/optimization.php
+
+		-
+			message: '#^Constant ROZHOLY_URI not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: inc/optimization.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/optimization.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/optimization.php
+
+		-
+			message: '#^Function add_theme_support not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/optimization.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/optimization.php
+
+		-
+			message: '#^Function is_admin not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/optimization.php
+
+		-
+			message: '#^Function remove_action not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/optimization.php
+
+		-
+			message: '#^Function remove_filter not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/optimization.php
+
+		-
+			message: '#^Parameter \$scripts of function rozholy_move_jquery_to_footer\(\) has invalid type WP_Scripts\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/optimization.php
+
+		-
+			message: '#^Constant DAY_IN_SECONDS not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Constant ROZHOLY_URI not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function get_option not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function get_template_directory not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function get_transient not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function is_admin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function is_customize_preview not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function set_transient not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function update_option not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function wp_add_inline_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function wp_enqueue_script not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function wp_enqueue_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function wp_register_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Function wp_strip_all_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/class-theme-panel.php
+
+		-
+			message: '#^Access to an undefined property \$this\(Rozholy_Range_Control\)\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Call to an undefined method \$this\(Rozholy_Range_Control\)\:\:link\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Call to an undefined method \$this\(Rozholy_Range_Control\)\:\:value\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Function esc_attr not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Function esc_js not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Function wp_add_inline_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/customizer-controls/rozholy-range-control.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Function get_option not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Function get_theme_mod not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Function remove_theme_mod not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Function update_option not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Function wp_parse_args not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/defaults.php
+
+		-
+			message: '#^Constant ROZHOLY_DIR not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function add_query_arg not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function admin_url not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function current_time not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function current_user_can not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function esc_html_e not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function esc_js not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function home_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function nocache_headers not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function sanitize_file_name not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function sanitize_key not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function sanitize_text_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function submit_button not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function update_option not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_die not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_json_encode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_nonce_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_nonce_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_safe_redirect not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_unslash not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function wp_verify_nonce not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/import-export.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function absint not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function add_settings_error not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function esc_url_raw not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function sanitize_hex_color not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function sanitize_text_field not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function wp_kses not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function wp_kses_post not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Function wp_strip_all_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/sanitize.php
+
+		-
+			message: '#^Constant ROZHOLY_URI not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 80
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_query_arg not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_settings_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_settings_section not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_theme_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function admin_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function checked not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function current_user_can not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function delete_option not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function do_settings_sections not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_attr not found\.$#'
+			identifier: function.notFound
+			count: 24
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_attr_e not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_html_e not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_js not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_textarea not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function get_current_screen not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function register_setting not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function sanitize_key not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function sanitize_text_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function selected not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function settings_errors not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function settings_fields not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function submit_button not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_die not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_enqueue_code_editor not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_enqueue_media not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_enqueue_script not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_enqueue_style not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_get_attachment_image_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_nonce_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_safe_redirect not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_unslash not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function wp_verify_nonce not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/panel/settings-page.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/requirements.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/requirements.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/requirements.php
+
+		-
+			message: '#^Function get_bloginfo not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/requirements.php
+
+		-
+			message: '#^Function is_admin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/requirements.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_bloginfo not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_permalink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_post not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_post_thumbnail_id not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_the_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_the_modified_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_the_title not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_theme_mod not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function get_userdata not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function has_post_thumbnail not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function home_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/schema.php
+
+		-
+			message: '#^Function is_front_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function is_home not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function is_singular not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function wp_get_attachment_image_src not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function wp_get_attachment_image_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function wp_json_encode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/schema.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/security.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/security.php
+
+		-
+			message: '#^Function esc_url_raw not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/security.php
+
+		-
+			message: '#^Function is_user_logged_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/security.php
+
+		-
+			message: '#^Function remove_action not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/security.php
+
+		-
+			message: '#^Function wp_unslash not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/security.php
+
+		-
+			message: '#^Instantiated class WP_Error not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/security.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/seo.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/seo.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/seo.php
+
+		-
+			message: '#^Constant ROZHOLY_DIR not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/setup.php
+
+		-
+			message: '#^Function add_editor_style not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function add_image_size not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function add_theme_support not found\.$#'
+			identifier: function.notFound
+			count: 20
+			path: inc/setup.php
+
+		-
+			message: '#^Function apply_filters not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/setup.php
+
+		-
+			message: '#^Function load_theme_textdomain not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function register_nav_menus not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/setup.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function esc_attr__ not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_post_type not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_post_type_archive_link not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_post_type_object not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_queried_object not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_search_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function get_the_title not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function home_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_404 not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_category not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_front_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_rtl not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_search not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function is_singular not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function the_posts_pagination not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function wp_kses not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/template-functions.php
+
+		-
+			message: '#^Function WC not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/woocommerce.php
+
+		-
+			message: '#^Function add_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/woocommerce.php
+
+		-
+			message: '#^Function add_filter not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/woocommerce.php
+
+		-
+			message: '#^Function remove_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/woocommerce.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: page-dashboard.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: page-dashboard.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: page-dashboard.php
+
+		-
+			message: '#^Function get_footer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function get_header not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function get_permalink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function get_template_part not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: page-dashboard.php
+
+		-
+			message: '#^Function is_user_logged_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function sanitize_key not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: page-dashboard.php
+
+		-
+			message: '#^Function wp_get_current_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function wp_login_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function wp_safe_redirect not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: page-dashboard.php
+
+		-
+			message: '#^Function has_post_thumbnail not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function have_posts not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function post_class not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function the_ID not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function the_content not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function the_post not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function the_post_thumbnail not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function the_title not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/content-elementor.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_comment_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_comment_link not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_comments not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_permalink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_posts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_the_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function get_the_title not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function setup_postdata not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function wp_get_current_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function wp_reset_postdata not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function wp_trim_words not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/activity.php
+
+		-
+			message: '#^Function admin_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function esc_attr not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function esc_textarea not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function wp_get_current_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function wp_nonce_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/profile.php
+
+		-
+			message: '#^Function admin_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/security.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: template-parts/dashboard/security.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/security.php
+
+		-
+			message: '#^Function wp_nonce_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/security.php
+
+		-
+			message: '#^Function __ not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function esc_attr not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function esc_html not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function esc_html__ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function esc_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function home_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function sanitize_key not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function wp_get_current_user not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php
+
+		-
+			message: '#^Function wp_logout_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: template-parts/dashboard/sidebar.php

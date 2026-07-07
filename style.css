@@ -112,3 +112,30 @@ html {
     display: flex !important;
   }
 }
+
+/* Fix Elementor popup modal black empty space */
+.elementor-popup-modal .dialog-widget-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.elementor-popup-modal .dialog-message {
+  max-height: none !important;
+  min-height: auto !important;
+  height: auto !important;
+  overflow: visible;
+}
+.elementor-popup-modal .dialog-widget-content > .dialog-header + .dialog-message {
+  margin-top: 0;
+  padding-top: 0;
+}
+.elementor-popup-modal .dialog-widget-content > *:first-child {
+  margin-top: 0;
+}
+.elementor-popup-modal img:not([src]),
+.elementor-popup-modal img[src=""],
+.elementor-popup-modal .elementor-image-box-img:empty {
+  display: none;
+}
+.elementor-popup-modal .dialog-close-button {
+  z-index: 9999;
+}

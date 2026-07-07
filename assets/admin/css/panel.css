@@ -1,0 +1,59 @@
+.rozholy-panel-wrap {
+  max-inline-size: 960px;
+}
+
+.rozholy-panel-wrap .nav-tab-wrapper {
+  margin-block-end: 1em;
+}
+
+.rozholy-panel-wrap .form-table th {
+  inline-size: 200px;
+}
+
+.rozholy-panel-wrap .form-table td {
+  padding-block: 10px;
+}
+
+.rozholy-panel-wrap .description {
+  margin-block-start: 4px;
+  color: #646970;
+  font-style: italic;
+}
+
+.rozholy-panel-wrap .rozholy-color-picker {
+  inline-size: 256px;
+}
+
+.rozholy-panel-wrap .rozholy-image-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-block-start: 8px;
+}
+
+.rozholy-panel-wrap .rozholy-image-preview img {
+  max-inline-size: 120px;
+  block-size: auto;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+}
+
+.rozholy-panel-wrap .rozholy-image-preview .button {
+  flex-shrink: 0;
+}
+
+.rozholy-panel-wrap .rozholy-reset-section {
+  margin-block-start: 30px;
+  padding-block-start: 20px;
+  border-block-start: 1px solid #dcdcde;
+}
+
+.rozholy-panel-wrap .rozholy-reset-section h2 {
+  margin-block-end: 10px;
+}
+
+.rozholy-panel-wrap .rozholy-preset-label {
+  display: inline-block;
+  margin-inline-end: 12px;
+  margin-block-end: 8px;
+}

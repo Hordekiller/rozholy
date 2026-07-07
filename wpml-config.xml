@@ -1,0 +1,11 @@
+<wpml-config>
+  <admin-texts>
+    <key name="rozholy_options">
+      <key name="footer_text" />
+      <key name="header_cta_text" />
+      <key name="seo_business_name" />
+      <key name="seo_business_address" />
+      <key name="seo_enamad_code" />
+    </key>
+  </admin-texts>
+</wpml-config>

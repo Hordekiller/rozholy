@@ -1,627 +1,765 @@
 <?php
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-add_action('customize_register', 'rozholy_customize_register');
-function rozholy_customize_register($wp_customize) {
+add_action( 'customize_register', 'rozholy_customize_register' );
+function rozholy_customize_register( $wp_customize ) {
 
-    /* ═══════════════════════════════════
-       Rozholy Master Panel
-    ═══════════════════════════════════ */
-    $wp_customize->add_panel('rozholy_theme_options', [
-        'title'       => esc_html__('Rozholy Settings', 'rozholy'),
-        'description' => esc_html__('تمامی تنظیمات قالب Rozholy', 'rozholy'),
-        'priority'    => 30,
-    ]);
+	$wp_customize->add_panel(
+		'rozholy_theme_options',
+		array(
+			'title'       => esc_html__( 'Rozholy Settings', 'rozholy' ),
+			'description' => esc_html__( 'All theme settings stored in a single options array.', 'rozholy' ),
+			'priority'    => 30,
+		)
+	);
 
-    /* ═══════════════════════════════════
-       1. COLORS
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_colors', [
-        'title'    => esc_html__('Colors', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 10,
-    ]);
+	$sections = array(
+		'rozholy_colors'     => array(
+			'title'    => __( 'Colors', 'rozholy' ),
+			'priority' => 10,
+		),
+		'rozholy_typography' => array(
+			'title'    => __( 'Typography', 'rozholy' ),
+			'priority' => 15,
+		),
+		'rozholy_header'     => array(
+			'title'    => __( 'Header', 'rozholy' ),
+			'priority' => 20,
+		),
+		'rozholy_footer'     => array(
+			'title'    => __( 'Footer', 'rozholy' ),
+			'priority' => 30,
+		),
+		'rozholy_social'     => array(
+			'title'    => __( 'Social Links', 'rozholy' ),
+			'priority' => 40,
+		),
+		'rozholy_layout'     => array(
+			'title'    => __( 'Layout', 'rozholy' ),
+			'priority' => 45,
+		),
+		'rozholy_homepage'   => array(
+			'title'    => __( 'Homepage', 'rozholy' ),
+			'priority' => 48,
+		),
+		'rozholy_blog'       => array(
+			'title'    => __( 'Blog', 'rozholy' ),
+			'priority' => 50,
+		),
+		'rozholy_buttons'    => array(
+			'title'    => __( 'Buttons', 'rozholy' ),
+			'priority' => 52,
+		),
+		'rozholy_dashboard'  => array(
+			'title'    => __( 'Dashboard', 'rozholy' ),
+			'priority' => 55,
+		),
+		'rozholy_motion'     => array(
+			'title'    => __( 'Motion', 'rozholy' ),
+			'priority' => 60,
+		),
+		'rozholy_bottom_nav' => array(
+			'title'    => __( 'Mobile Bottom Nav', 'rozholy' ),
+			'priority' => 65,
+		),
+		'rozholy_advanced'   => array(
+			'title'    => __( 'Advanced', 'rozholy' ),
+			'priority' => 99,
+		),
+	);
 
-    $colors = [
-        'rozholy_primary_color'       => ['label' => __('Primary Pink', 'rozholy'),       'default' => '#d4a0a0'],
-        'rozholy_primary_dark'        => ['label' => __('Primary Dark', 'rozholy'),        'default' => '#c08080'],
-        'rozholy_primary_light'       => ['label' => __('Primary Light', 'rozholy'),       'default' => '#f0d0d0'],
-        'rozholy_secondary_color'     => ['label' => __('Secondary Purple', 'rozholy'),    'default' => '#b8a0c0'],
-        'rozholy_secondary_dark'      => ['label' => __('Secondary Dark', 'rozholy'),      'default' => '#9870a8'],
-        'rozholy_accent_gold'         => ['label' => __('Accent Gold', 'rozholy'),         'default' => '#c8a87c'],
-        'rozholy_accent_light'        => ['label' => __('Accent Light', 'rozholy'),        'default' => '#e8d0b8'],
-        'rozholy_base_bg'             => ['label' => __('Base Background', 'rozholy'),     'default' => '#faf5f0'],
-        'rozholy_base_alt'            => ['label' => __('Base Alt', 'rozholy'),            'default' => '#f5ece4'],
-        'rozholy_dark_color'          => ['label' => __('Dark', 'rozholy'),                'default' => '#2d2d2d'],
-        'rozholy_text_color'          => ['label' => __('Text Color', 'rozholy'),          'default' => '#4a4a4a'],
-        'rozholy_text_light'          => ['label' => __('Text Light', 'rozholy'),          'default' => '#7a7a7a'],
-        'rozholy_border_color'        => ['label' => __('Border Color', 'rozholy'),        'default' => '#e8ddd5'],
-    ];
+	foreach ( $sections as $id => $data ) {
+		$wp_customize->add_section(
+			$id,
+			array(
+				'title'    => $data['title'],
+				'panel'    => 'rozholy_theme_options',
+				'priority' => $data['priority'],
+			)
+		);
+	}
 
-    foreach ($colors as $key => $data) {
-        $wp_customize->add_setting($key, [
-            'default'           => $data['default'],
-            'sanitize_callback' => 'sanitize_hex_color',
-            'transport'         => 'postMessage',
-        ]);
-        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $key, [
-            'label'    => $data['label'],
-            'section'  => 'rozholy_colors',
-        ]));
-    }
+	$manifest = rozholy_option_manifest();
+	$defaults = rozholy_default_options();
 
-    /* ═══════════════════════════════════
-       2. TYPOGRAPHY
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_typography', [
-        'title'    => esc_html__('Typography', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 15,
-    ]);
+	$field_map = array(
+		'primary_color'          => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Primary Pink', 'rozholy' ),
+			'control' => 'color',
+		),
+		'primary_dark'           => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Primary Dark', 'rozholy' ),
+			'control' => 'color',
+		),
+		'primary_light'          => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Primary Light', 'rozholy' ),
+			'control' => 'color',
+		),
+		'secondary_color'        => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Secondary Purple', 'rozholy' ),
+			'control' => 'color',
+		),
+		'secondary_dark'         => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Secondary Dark', 'rozholy' ),
+			'control' => 'color',
+		),
+		'accent_gold'            => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Accent Gold', 'rozholy' ),
+			'control' => 'color',
+		),
+		'accent_light'           => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Accent Light', 'rozholy' ),
+			'control' => 'color',
+		),
+		'base_bg'                => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Base Background', 'rozholy' ),
+			'control' => 'color',
+		),
+		'base_alt'               => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Base Alt', 'rozholy' ),
+			'control' => 'color',
+		),
+		'dark_color'             => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Dark', 'rozholy' ),
+			'control' => 'color',
+		),
+		'text_color'             => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Text Color', 'rozholy' ),
+			'control' => 'color',
+		),
+		'text_light'             => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Text Light', 'rozholy' ),
+			'control' => 'color',
+		),
+		'border_color'           => array(
+			'section' => 'rozholy_colors',
+			'label'   => __( 'Border Color', 'rozholy' ),
+			'control' => 'color',
+		),
+		'footer_bg'              => array(
+			'section' => 'rozholy_footer',
+			'label'   => __( 'Footer Background', 'rozholy' ),
+			'control' => 'color',
+		),
+		'heading_font'           => array(
+			'section' => 'rozholy_typography',
+			'label'   => __( 'Heading Font', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'playfair'  => 'Playfair Display',
+				'dancing'   => 'Dancing Script',
+				'vazirmatn' => 'Vazirmatn',
+				'system'    => 'System Stack',
+			),
+		),
+		'body_font'              => array(
+			'section' => 'rozholy_typography',
+			'label'   => __( 'Body Font', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'vazirmatn' => 'Vazirmatn',
+				'playfair'  => 'Playfair Display',
+				'system'    => 'System Stack',
+			),
+		),
+		'base_font_size'         => array(
+			'section'     => 'rozholy_typography',
+			'label'       => __( 'Base Font Size (px)', 'rozholy' ),
+			'control'     => 'number',
+			'input_attrs' => array(
+				'min'  => 12,
+				'max'  => 24,
+				'step' => 1,
+			),
+		),
+		'heading_weight'         => array(
+			'section' => 'rozholy_typography',
+			'label'   => __( 'Heading Weight', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'400' => '400',
+				'500' => '500',
+				'600' => '600',
+				'700' => '700',
+				'800' => '800',
+				'900' => '900',
+			),
+		),
+		'header_layout'          => array(
+			'section' => 'rozholy_header',
+			'label'   => __( 'Header Layout', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'default'     => __( 'Default (Solid)', 'rozholy' ),
+				'transparent' => __( 'Transparent', 'rozholy' ),
+			),
+		),
+		'sticky_header'          => array(
+			'section' => 'rozholy_header',
+			'label'   => __( 'Sticky Header', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'On', 'rozholy' ),
+				'off' => __( 'Off', 'rozholy' ),
+			),
+		),
+		'header_cta_text'        => array(
+			'section' => 'rozholy_header',
+			'label'   => __( 'CTA Button Text', 'rozholy' ),
+			'control' => 'text',
+		),
+		'header_cta_url'         => array(
+			'section' => 'rozholy_header',
+			'label'   => __( 'CTA Button URL', 'rozholy' ),
+			'control' => 'url',
+		),
+		'header_search'          => array(
+			'section' => 'rozholy_header',
+			'label'   => __( 'Show Search', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'footer_layout'          => array(
+			'section' => 'rozholy_footer',
+			'label'   => __( 'Footer Columns', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'4' => '4',
+				'3' => '3',
+				'2' => '2',
+				'1' => '1',
+			),
+		),
+		'footer_text'            => array(
+			'section' => 'rozholy_footer',
+			'label'   => __( 'Copyright Text', 'rozholy' ),
+			'control' => 'textarea',
+		),
+		'footer_social'          => array(
+			'section' => 'rozholy_footer',
+			'label'   => __( 'Show Social Icons', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'social_instagram'       => array(
+			'section' => 'rozholy_social',
+			'label'   => 'Instagram URL',
+			'control' => 'url',
+		),
+		'social_telegram'        => array(
+			'section' => 'rozholy_social',
+			'label'   => 'Telegram URL',
+			'control' => 'url',
+		),
+		'social_whatsapp'        => array(
+			'section' => 'rozholy_social',
+			'label'   => 'WhatsApp URL',
+			'control' => 'url',
+		),
+		'social_youtube'         => array(
+			'section' => 'rozholy_social',
+			'label'   => 'YouTube URL',
+			'control' => 'url',
+		),
+		'social_facebook'        => array(
+			'section' => 'rozholy_social',
+			'label'   => 'Facebook URL',
+			'control' => 'url',
+		),
+		'social_twitter'         => array(
+			'section' => 'rozholy_social',
+			'label'   => 'Twitter / X URL',
+			'control' => 'url',
+		),
+		'social_linkedin'        => array(
+			'section' => 'rozholy_social',
+			'label'   => 'LinkedIn URL',
+			'control' => 'url',
+		),
+		'social_pinterest'       => array(
+			'section' => 'rozholy_social',
+			'label'   => 'Pinterest URL',
+			'control' => 'url',
+		),
+		'content_width'          => array(
+			'section'     => 'rozholy_layout',
+			'label'       => __( 'Content Width (px)', 'rozholy' ),
+			'control'     => 'number',
+			'input_attrs' => array(
+				'min'  => 600,
+				'max'  => 1400,
+				'step' => 20,
+			),
+		),
+		'wide_width'             => array(
+			'section'     => 'rozholy_layout',
+			'label'       => __( 'Wide Width (px)', 'rozholy' ),
+			'control'     => 'number',
+			'input_attrs' => array(
+				'min'  => 800,
+				'max'  => 1600,
+				'step' => 20,
+			),
+		),
+		'blog_columns'           => array(
+			'section' => 'rozholy_layout',
+			'label'   => __( 'Blog Columns', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'2' => '2',
+				'3' => '3',
+				'4' => '4',
+			),
+		),
+		'shop_columns'           => array(
+			'section' => 'rozholy_layout',
+			'label'   => __( 'Shop Columns', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'2' => '2',
+				'3' => '3',
+				'4' => '4',
+			),
+		),
+		'products_per_page'      => array(
+			'section'     => 'rozholy_layout',
+			'label'       => __( 'Products Per Page', 'rozholy' ),
+			'control'     => 'number',
+			'input_attrs' => array(
+				'min'  => 3,
+				'max'  => 48,
+				'step' => 3,
+			),
+		),
+		'show_hero'              => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Hero', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_services'          => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Services', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_testimonials'      => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Testimonials', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_gallery'           => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Gallery', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_booking'           => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Booking', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_contact'           => array(
+			'section' => 'rozholy_homepage',
+			'label'   => __( 'Show Contact', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'excerpt_length'         => array(
+			'section'     => 'rozholy_blog',
+			'label'       => __( 'Excerpt Length', 'rozholy' ),
+			'control'     => 'number',
+			'input_attrs' => array(
+				'min'  => 10,
+				'max'  => 100,
+				'step' => 5,
+			),
+		),
+		'show_author'            => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Author', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_date'              => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Date', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_categories'        => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Categories', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_tags'              => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Tags', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_thumb'             => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Featured Image', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'show_comments'          => array(
+			'section' => 'rozholy_blog',
+			'label'   => __( 'Show Comments', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'button_radius'          => array(
+			'section'     => 'rozholy_buttons',
+			'label'       => __( 'Button Radius (px)', 'rozholy' ),
+			'control'     => 'range',
+			'input_attrs' => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 1,
+			),
+		),
+		'button_hover'           => array(
+			'section' => 'rozholy_buttons',
+			'label'   => __( 'Hover Effect', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'brighten' => __( 'Brighten', 'rozholy' ),
+				'darken'   => __( 'Darken', 'rozholy' ),
+				'scale'    => __( 'Scale', 'rozholy' ),
+				'none'     => __( 'None', 'rozholy' ),
+			),
+		),
+		'dashboard_page'         => array(
+			'section' => 'rozholy_dashboard',
+			'label'   => __( 'Dashboard Page', 'rozholy' ),
+			'control' => 'dropdown-pages',
+		),
+		'avatar_size'            => array(
+			'section'     => 'rozholy_dashboard',
+			'label'       => __( 'Avatar Size (px)', 'rozholy' ),
+			'control'     => 'range',
+			'input_attrs' => array(
+				'min'  => 32,
+				'max'  => 200,
+				'step' => 8,
+			),
+		),
+		'motion_intensity'       => array(
+			'section' => 'rozholy_motion',
+			'label'   => __( 'Motion Intensity', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'full'   => __( 'Full', 'rozholy' ),
+				'subtle' => __( 'Subtle', 'rozholy' ),
+				'off'    => __( 'Off', 'rozholy' ),
+			),
+		),
+		'parallax'               => array(
+			'section' => 'rozholy_motion',
+			'label'   => __( 'Parallax', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'On', 'rozholy' ),
+				'off' => __( 'Off', 'rozholy' ),
+			),
+		),
+		'mobile_bottom_nav'      => array(
+			'section' => 'rozholy_bottom_nav',
+			'label'   => __( 'Enable Mobile Bottom Nav', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'Show', 'rozholy' ),
+				'off' => __( 'Hide', 'rozholy' ),
+			),
+		),
+		'bottom_nav_hide_scroll' => array(
+			'section' => 'rozholy_bottom_nav',
+			'label'   => __( 'Hide on Scroll Down', 'rozholy' ),
+			'control' => 'select',
+			'choices' => array(
+				'on'  => __( 'On', 'rozholy' ),
+				'off' => __( 'Off', 'rozholy' ),
+			),
+		),
+		'custom_css'             => array(
+			'section'     => 'rozholy_advanced',
+			'label'       => __( 'Custom CSS', 'rozholy' ),
+			'control'     => 'textarea',
+			'input_attrs' => array( 'style' => 'font-family:monospace;direction:ltr' ),
+		),
+		'header_scripts'         => array(
+			'section'     => 'rozholy_advanced',
+			'label'       => __( 'Header Scripts', 'rozholy' ),
+			'control'     => 'textarea',
+			'input_attrs' => array( 'style' => 'font-family:monospace;direction:ltr' ),
+		),
+		'footer_scripts'         => array(
+			'section'     => 'rozholy_advanced',
+			'label'       => __( 'Footer Scripts', 'rozholy' ),
+			'control'     => 'textarea',
+			'input_attrs' => array( 'style' => 'font-family:monospace;direction:ltr' ),
+		),
+	);
 
-    $wp_customize->add_setting('rozholy_heading_font', [
-        'default'           => 'playfair',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_heading_font', [
-        'label'    => esc_html__('Heading Font', 'rozholy'),
-        'section'  => 'rozholy_typography',
-        'type'     => 'select',
-        'choices'  => [
-            'playfair'    => esc_html__('Playfair Display', 'rozholy'),
-            'dancing'     => esc_html__('Dancing Script', 'rozholy'),
-            'vazirmatn'   => esc_html__('Vazirmatn', 'rozholy'),
-            'system'      => esc_html__('System Stack', 'rozholy'),
-        ],
-    ]);
+	$transport_map = array(
+		'color'    => 'postMessage',
+		'select'   => 'refresh',
+		'text'     => 'postMessage',
+		'url'      => 'refresh',
+		'number'   => 'postMessage',
+		'range'    => 'postMessage',
+		'textarea' => 'postMessage',
+	);
 
-    $wp_customize->add_setting('rozholy_body_font', [
-        'default'           => 'vazirmatn',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_body_font', [
-        'label'    => esc_html__('Body Font', 'rozholy'),
-        'section'  => 'rozholy_typography',
-        'type'     => 'select',
-        'choices'  => [
-            'vazirmatn'   => esc_html__('Vazirmatn', 'rozholy'),
-            'playfair'    => esc_html__('Playfair Display', 'rozholy'),
-            'system'      => esc_html__('System Stack', 'rozholy'),
-        ],
-    ]);
+	foreach ( $field_map as $key => $field ) {
+		$setting_id = 'rozholy_options[' . $key . ']';
+		$transport  = $transport_map[ $field['control'] ] ?? 'refresh';
 
-    $wp_customize->add_setting('rozholy_base_font_size', [
-        'default'           => '16',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('rozholy_base_font_size', [
-        'label'       => esc_html__('Base Font Size (px)', 'rozholy'),
-        'section'     => 'rozholy_typography',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 12, 'max' => 24, 'step' => 1],
-    ]);
+		$wp_customize->add_setting(
+			$setting_id,
+			array(
+				'default'           => $defaults[ $key ] ?? '',
+				'type'              => 'option',
+				'capability'        => 'edit_theme_options',
+				'transport'         => $transport,
+				'sanitize_callback' => 'rozholy_sanitize_customizer_setting',
+			)
+		);
 
-    $wp_customize->add_setting('rozholy_heading_weight', [
-        'default'           => '700',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('rozholy_heading_weight', [
-        'label'       => esc_html__('Heading Font Weight', 'rozholy'),
-        'section'     => 'rozholy_typography',
-        'type'        => 'select',
-        'choices'     => [
-            '400' => '400',
-            '500' => '500',
-            '600' => '600',
-            '700' => '700',
-            '800' => '800',
-            '900' => '900',
-        ],
-    ]);
+		switch ( $field['control'] ) {
+			case 'color':
+				$wp_customize->add_control(
+					new WP_Customize_Color_Control(
+						$wp_customize,
+						$setting_id,
+						array(
+							'label'   => $field['label'],
+							'section' => $field['section'],
+						)
+					)
+				);
+				break;
+			case 'range':
+				if ( class_exists( 'Rozholy_Range_Control' ) ) {
+					$field['input_attrs']['data-setting-key'] = $key;
+					$wp_customize->add_control(
+						new Rozholy_Range_Control(
+							$wp_customize,
+							$setting_id,
+							array(
+								'label'       => $field['label'],
+								'section'     => $field['section'],
+								'input_attrs' => $field['input_attrs'] ?? array(),
+							)
+						)
+					);
+				} else {
+					$wp_customize->add_control(
+						$setting_id,
+						array(
+							'label'       => $field['label'],
+							'section'     => $field['section'],
+							'type'        => 'range',
+							'input_attrs' => $field['input_attrs'] ?? array(),
+						)
+					);
+				}
+				break;
+			case 'dropdown-pages':
+				$wp_customize->add_control(
+					$setting_id,
+					array(
+						'label'   => $field['label'],
+						'section' => $field['section'],
+						'type'    => 'dropdown-pages',
+					)
+				);
+				break;
+			case 'select':
+				$wp_customize->add_control(
+					$setting_id,
+					array(
+						'label'   => $field['label'],
+						'section' => $field['section'],
+						'type'    => 'select',
+						'choices' => $field['choices'],
+					)
+				);
+				break;
+			case 'textarea':
+				$wp_customize->add_control(
+					$setting_id,
+					array(
+						'label'       => $field['label'],
+						'section'     => $field['section'],
+						'type'        => 'textarea',
+						'input_attrs' => $field['input_attrs'] ?? array(),
+					)
+				);
+				break;
+			default:
+				$wp_customize->add_control(
+					$setting_id,
+					array(
+						'label'       => $field['label'],
+						'section'     => $field['section'],
+						'type'        => $field['control'],
+						'input_attrs' => $field['input_attrs'] ?? array(),
+					)
+				);
+		}
+	}
 
-    /* ═══════════════════════════════════
-       3. HEADER
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_header', [
-        'title'    => esc_html__('Header', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 20,
-    ]);
-
-    $wp_customize->add_setting('rozholy_header_layout', [
-        'default'           => 'default',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_header_layout', [
-        'label'    => esc_html__('Header Layout', 'rozholy'),
-        'section'  => 'rozholy_header',
-        'type'     => 'select',
-        'choices'  => [
-            'default'     => esc_html__('Default (Solid)', 'rozholy'),
-            'transparent' => esc_html__('Transparent', 'rozholy'),
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_sticky_header', [
-        'default'           => 'on',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_sticky_header', [
-        'label'    => esc_html__('Sticky Header', 'rozholy'),
-        'section'  => 'rozholy_header',
-        'type'     => 'select',
-        'choices'  => [
-            'on'  => esc_html__('On', 'rozholy'),
-            'off' => esc_html__('Off', 'rozholy'),
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_header_cta_text', [
-        'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_header_cta_text', [
-        'label'       => esc_html__('Header CTA Button Text', 'rozholy'),
-        'section'     => 'rozholy_header',
-        'type'        => 'text',
-        'description' => esc_html__('Leave empty to hide the CTA button', 'rozholy'),
-    ]);
-
-    $wp_customize->add_setting('rozholy_header_cta_url', [
-        'default'           => '#',
-        'sanitize_callback' => 'esc_url_raw',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_header_cta_url', [
-        'label'   => esc_html__('Header CTA Button URL', 'rozholy'),
-        'section' => 'rozholy_header',
-        'type'    => 'url',
-    ]);
-
-    $wp_customize->add_setting('rozholy_header_search', [
-        'default'           => 'on',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_header_search', [
-        'label'    => esc_html__('Show Search in Header', 'rozholy'),
-        'section'  => 'rozholy_header',
-        'type'     => 'select',
-        'choices'  => [
-            'on'  => esc_html__('Show', 'rozholy'),
-            'off' => esc_html__('Hide', 'rozholy'),
-        ],
-    ]);
-
-    /* ═══════════════════════════════════
-       4. FOOTER
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_footer', [
-        'title'    => esc_html__('Footer', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 30,
-    ]);
-
-    $wp_customize->add_setting('rozholy_footer_layout', [
-        'default'           => '4',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_footer_layout', [
-        'label'    => esc_html__('Footer Columns', 'rozholy'),
-        'section'  => 'rozholy_footer',
-        'type'     => 'select',
-        'choices'  => [
-            '4' => esc_html__('4 Columns', 'rozholy'),
-            '3' => esc_html__('3 Columns', 'rozholy'),
-            '2' => esc_html__('2 Columns', 'rozholy'),
-            '1' => esc_html__('1 Column', 'rozholy'),
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_footer_text', [
-        'default'           => '© 2025 Rozholy. تمامی حقوق محفوظ است.',
-        'sanitize_callback' => 'wp_kses_post',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('rozholy_footer_text', [
-        'label'    => esc_html__('Footer Copyright Text', 'rozholy'),
-        'section'  => 'rozholy_footer',
-        'type'     => 'textarea',
-    ]);
-
-    $wp_customize->add_setting('rozholy_footer_social', [
-        'default'           => 'on',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_footer_social', [
-        'label'    => esc_html__('Show Social Icons in Footer', 'rozholy'),
-        'section'  => 'rozholy_footer',
-        'type'     => 'select',
-        'choices'  => [
-            'on'  => esc_html__('Show', 'rozholy'),
-            'off' => esc_html__('Hide', 'rozholy'),
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_footer_bg', [
-        'default'           => '#2d2d2d',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'rozholy_footer_bg', [
-        'label'    => esc_html__('Footer Background Color', 'rozholy'),
-        'section'  => 'rozholy_footer',
-    ]));
-
-    /* ═══════════════════════════════════
-       5. SOCIAL LINKS
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_social', [
-        'title'    => esc_html__('Social Links', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 40,
-    ]);
-
-    $socials = [
-        'instagram' => esc_html__('Instagram URL', 'rozholy'),
-        'telegram'  => esc_html__('Telegram URL', 'rozholy'),
-        'whatsapp'  => esc_html__('WhatsApp URL', 'rozholy'),
-        'youtube'   => esc_html__('YouTube URL', 'rozholy'),
-        'facebook'  => esc_html__('Facebook URL', 'rozholy'),
-        'twitter'   => esc_html__('Twitter / X URL', 'rozholy'),
-        'linkedin'  => esc_html__('LinkedIn URL', 'rozholy'),
-        'pinterest' => esc_html__('Pinterest URL', 'rozholy'),
-    ];
-
-    foreach ($socials as $key => $label) {
-        $wp_customize->add_setting("rozholy_social_{$key}", [
-            'default'           => '',
-            'sanitize_callback' => 'esc_url_raw',
-            'transport'         => 'refresh',
-        ]);
-        $wp_customize->add_control("rozholy_social_{$key}", [
-            'label'    => $label,
-            'section'  => 'rozholy_social',
-            'type'     => 'url',
-        ]);
-    }
-
-    /* ═══════════════════════════════════
-       6. LAYOUT
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_layout', [
-        'title'    => esc_html__('Layout', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 45,
-    ]);
-
-    $wp_customize->add_setting('rozholy_content_width', [
-        'default'           => '800',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_content_width', [
-        'label'       => esc_html__('Content Width (px)', 'rozholy'),
-        'section'     => 'rozholy_layout',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 600, 'max' => 1400, 'step' => 20],
-    ]);
-
-    $wp_customize->add_setting('rozholy_wide_width', [
-        'default'           => '1200',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_wide_width', [
-        'label'       => esc_html__('Wide Width (px)', 'rozholy'),
-        'section'     => 'rozholy_layout',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 800, 'max' => 1600, 'step' => 20],
-    ]);
-
-    $wp_customize->add_setting('rozholy_blog_columns', [
-        'default'           => '3',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_blog_columns', [
-        'label'    => esc_html__('Blog Grid Columns', 'rozholy'),
-        'section'  => 'rozholy_layout',
-        'type'     => 'select',
-        'choices'  => [
-            '2' => '2',
-            '3' => '3',
-            '4' => '4',
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_shop_columns', [
-        'default'           => '3',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_shop_columns', [
-        'label'    => esc_html__('Shop Grid Columns', 'rozholy'),
-        'section'  => 'rozholy_layout',
-        'type'     => 'select',
-        'choices'  => [
-            '2' => '2',
-            '3' => '3',
-            '4' => '4',
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_products_per_page', [
-        'default'           => '12',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_products_per_page', [
-        'label'       => esc_html__('Products Per Page', 'rozholy'),
-        'section'     => 'rozholy_layout',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 3, 'max' => 48, 'step' => 3],
-    ]);
-
-    /* ═══════════════════════════════════
-       7. HOMEPAGE SECTIONS
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_homepage', [
-        'title'    => esc_html__('Homepage Sections', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 48,
-    ]);
-
-    $sections = [
-        'hero'       => __('Show Hero Section', 'rozholy'),
-        'services'   => __('Show Services Grid', 'rozholy'),
-        'testimonials' => __('Show Testimonials', 'rozholy'),
-        'gallery'    => __('Show Gallery', 'rozholy'),
-        'booking'    => __('Show Booking Form', 'rozholy'),
-        'contact'    => __('Show Contact Info', 'rozholy'),
-    ];
-
-    foreach ($sections as $key => $label) {
-        $wp_customize->add_setting("rozholy_show_{$key}", [
-            'default'           => 'on',
-            'sanitize_callback' => 'sanitize_text_field',
-            'transport'         => 'refresh',
-        ]);
-        $wp_customize->add_control("rozholy_show_{$key}", [
-            'label'   => $label,
-            'section' => 'rozholy_homepage',
-            'type'    => 'select',
-            'choices' => [
-                'on'  => esc_html__('Show', 'rozholy'),
-                'off' => esc_html__('Hide', 'rozholy'),
-            ],
-        ]);
-    }
-
-    /* ═══════════════════════════════════
-       8. BLOG / ARCHIVE
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_blog', [
-        'title'    => esc_html__('Blog', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 50,
-    ]);
-
-    $wp_customize->add_setting('rozholy_excerpt_length', [
-        'default'           => '25',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_excerpt_length', [
-        'label'       => esc_html__('Excerpt Length (words)', 'rozholy'),
-        'section'     => 'rozholy_blog',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 10, 'max' => 100, 'step' => 5],
-    ]);
-
-    $toggles = [
-        'show_author'     => __('Show Author', 'rozholy'),
-        'show_date'       => __('Show Date', 'rozholy'),
-        'show_categories' => __('Show Categories', 'rozholy'),
-        'show_tags'       => __('Show Tags', 'rozholy'),
-        'show_thumb'      => __('Show Featured Image', 'rozholy'),
-        'show_comments'   => __('Show Comments', 'rozholy'),
-    ];
-
-    foreach ($toggles as $key => $label) {
-        $wp_customize->add_setting("rozholy_{$key}", [
-            'default'           => 'on',
-            'sanitize_callback' => 'sanitize_text_field',
-            'transport'         => 'refresh',
-        ]);
-        $wp_customize->add_control("rozholy_{$key}", [
-            'label'   => $label,
-            'section' => 'rozholy_blog',
-            'type'    => 'select',
-            'choices' => [
-                'on'  => esc_html__('Show', 'rozholy'),
-                'off' => esc_html__('Hide', 'rozholy'),
-            ],
-        ]);
-    }
-
-    /* ═══════════════════════════════════
-       9. BUTTONS
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_buttons', [
-        'title'    => esc_html__('Buttons', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 52,
-    ]);
-
-    $wp_customize->add_setting('rozholy_button_radius', [
-        'default'           => '9999',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('rozholy_button_radius', [
-        'label'       => esc_html__('Button Border Radius (px)', 'rozholy'),
-        'section'     => 'rozholy_buttons',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 0, 'max' => 50, 'step' => 1],
-    ]);
-
-    $wp_customize->add_setting('rozholy_button_hover', [
-        'default'           => 'brighten',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_button_hover', [
-        'label'    => esc_html__('Button Hover Effect', 'rozholy'),
-        'section'  => 'rozholy_buttons',
-        'type'     => 'select',
-        'choices'  => [
-            'brighten' => esc_html__('Brighten', 'rozholy'),
-            'darken'   => esc_html__('Darken', 'rozholy'),
-            'scale'    => esc_html__('Scale', 'rozholy'),
-            'none'     => esc_html__('None', 'rozholy'),
-        ],
-    ]);
-
-    /* ═══════════════════════════════════
-       10. USER DASHBOARD
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_dashboard', [
-        'title'    => esc_html__('User Dashboard', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 55,
-    ]);
-
-    $wp_customize->add_setting('rozholy_dashboard_page', [
-        'default'           => 0,
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_dashboard_page', [
-        'label'    => esc_html__('Dashboard Page', 'rozholy'),
-        'section'  => 'rozholy_dashboard',
-        'type'     => 'dropdown-pages',
-    ]);
-
-    $wp_customize->add_setting('rozholy_avatar_size', [
-        'default'           => '80',
-        'sanitize_callback' => 'absint',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_avatar_size', [
-        'label'       => esc_html__('Avatar Size (px)', 'rozholy'),
-        'section'     => 'rozholy_dashboard',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 32, 'max' => 200, 'step' => 8],
-    ]);
-
-    /* ═══════════════════════════════════
-       11. MOTION & EFFECTS
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_motion', [
-        'title'       => esc_html__('Motion & Effects', 'rozholy'),
-        'panel'       => 'rozholy_theme_options',
-        'priority'    => 60,
-        'description' => esc_html__('کنترل شدت انیمیشن‌ها و افکت‌های بصری', 'rozholy'),
-    ]);
-
-    $wp_customize->add_setting('rozholy_motion_intensity', [
-        'default'           => 'full',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_motion_intensity', [
-        'label'    => esc_html__('Motion Intensity', 'rozholy'),
-        'section'  => 'rozholy_motion',
-        'type'     => 'select',
-        'choices'  => [
-            'full'   => esc_html__('Full', 'rozholy'),
-            'subtle' => esc_html__('Subtle', 'rozholy'),
-            'off'    => esc_html__('Off', 'rozholy'),
-        ],
-    ]);
-
-    $wp_customize->add_setting('rozholy_parallax', [
-        'default'           => 'on',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_parallax', [
-        'label'    => esc_html__('Parallax Effects', 'rozholy'),
-        'section'  => 'rozholy_motion',
-        'type'     => 'select',
-        'choices'  => [
-            'on'  => esc_html__('On', 'rozholy'),
-            'off' => esc_html__('Off', 'rozholy'),
-        ],
-    ]);
-
-    /* ═══════════════════════════════════
-       12. ADVANCED
-    ═══════════════════════════════════ */
-    $wp_customize->add_section('rozholy_advanced', [
-        'title'    => esc_html__('Advanced', 'rozholy'),
-        'panel'    => 'rozholy_theme_options',
-        'priority' => 99,
-    ]);
-
-    $wp_customize->add_setting('rozholy_custom_css', [
-        'default'           => '',
-        'sanitize_callback' => 'wp_strip_all_tags',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_custom_css', [
-        'label'       => esc_html__('Custom CSS', 'rozholy'),
-        'section'     => 'rozholy_advanced',
-        'type'        => 'textarea',
-        'description' => esc_html__('Add custom CSS rules (without <style> tags)', 'rozholy'),
-        'input_attrs' => ['style' => 'font-family:monospace;direction:ltr'],
-    ]);
-
-    $wp_customize->add_setting('rozholy_header_scripts', [
-        'default'           => '',
-        'sanitize_callback' => 'rozholy_sanitize_scripts',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_header_scripts', [
-        'label'       => esc_html__('Header Scripts', 'rozholy'),
-        'section'     => 'rozholy_advanced',
-        'type'        => 'textarea',
-        'description' => esc_html__('Add code to <head> (analytics, meta tags)', 'rozholy'),
-        'input_attrs' => ['style' => 'font-family:monospace;direction:ltr'],
-    ]);
-
-    $wp_customize->add_setting('rozholy_footer_scripts', [
-        'default'           => '',
-        'sanitize_callback' => 'rozholy_sanitize_scripts',
-        'transport'         => 'refresh',
-    ]);
-    $wp_customize->add_control('rozholy_footer_scripts', [
-        'label'       => esc_html__('Footer Scripts', 'rozholy'),
-        'section'     => 'rozholy_advanced',
-        'type'        => 'textarea',
-        'description' => esc_html__('Add code before </body> (chat widgets, pixels)', 'rozholy'),
-        'input_attrs' => ['style' => 'font-family:monospace;direction:ltr'],
-    ]);
+	/* ── Selective refresh: footer copyright text ── */
+	$wp_customize->selective_refresh->add_partial(
+		'rozholy_options[footer_text]',
+		array(
+			'selector'        => '.site-footer__copyright',
+			'render_callback' => function () {
+				return wp_kses_post( rozholy_get_option( 'footer_text' ) );
+			},
+		)
+	);
 }
 
-/* ── Sanitize scripts (allow basic HTML/script tags for embed codes) ── */
-function rozholy_sanitize_scripts($input) {
-    return wp_kses($input, [
-        'script' => ['src' => [], 'async' => [], 'defer' => [], 'type' => []],
-        'meta'   => ['name' => [], 'content' => [], 'property' => [], 'charset' => []],
-        'link'   => ['href' => [], 'rel' => [], 'type' => [], 'media' => [], 'crossorigin' => []],
-        'noscript' => [],
-        'style'  => ['type' => []],
-        'iframe' => ['src' => [], 'width' => [], 'height' => [], 'style' => [], 'allow' => [], 'loading' => []],
-    ]);
+add_filter( 'customize_sanitize_js_rozholy_options', 'rozholy_sanitize_customizer_js' );
+function rozholy_sanitize_customizer_js( $value ) {
+	return $value;
+}
+
+function rozholy_sanitize_customizer_setting( $value, $setting ) {
+	preg_match( '/rozholy_options\[(.+?)\]/', $setting->id, $matches );
+	if ( empty( $matches[1] ) ) {
+		return $value;
+	}
+	$key      = $matches[1];
+	$manifest = rozholy_option_manifest();
+	if ( ! isset( $manifest[ $key ] ) ) {
+		return $value;
+	}
+	$rule = $manifest[ $key ];
+	switch ( $rule['type'] ) {
+		case 'color':
+			return sanitize_hex_color( $value ) ?: $value;
+		case 'number':
+			$num = floatval( $value );
+			if ( isset( $rule['min'] ) ) {
+				$num = max( $rule['min'], $num );
+			}
+			if ( isset( $rule['max'] ) ) {
+				$num = min( $rule['max'], $num );
+			}
+			return $num;
+		case 'checkbox':
+			return $value ? '1' : '0';
+		case 'image':
+			return absint( $value );
+		case 'html':
+			return wp_kses_post( $value );
+		case 'url':
+			return esc_url_raw( $value );
+		case 'text':
+			return sanitize_text_field( $value );
+		case 'select':
+			$choices = array_values( $rule['choices'] );
+			return in_array( (string) $value, $choices, true ) ? $value : '';
+		case 'css':
+			return wp_strip_all_tags( $value );
+		case 'scripts':
+			return wp_kses(
+				$value,
+				array(
+					'script'   => array(
+						'src'   => array(),
+						'async' => array(),
+						'defer' => array(),
+						'type'  => array(),
+					),
+					'meta'     => array(
+						'name'     => array(),
+						'content'  => array(),
+						'property' => array(),
+						'charset'  => array(),
+					),
+					'link'     => array(
+						'href'        => array(),
+						'rel'         => array(),
+						'type'        => array(),
+						'media'       => array(),
+						'crossorigin' => array(),
+					),
+					'noscript' => array(),
+					'style'    => array( 'type' => array() ),
+					'iframe'   => array(
+						'src'     => array(),
+						'width'   => array(),
+						'height'  => array(),
+						'style'   => array(),
+						'allow'   => array(),
+						'loading' => array(),
+					),
+				)
+			);
+		default:
+			return sanitize_text_field( $value );
+	}
 }

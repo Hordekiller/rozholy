@@ -119,45 +119,30 @@
 [data-reveal-delay="5"] { transition-delay: 0.5s; }
 
 /* ── Animated conic-gradient border ── */
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
+@supports (background: conic-gradient(red, blue)) {
+  .conic-border {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+  }
 
-.conic-border {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-}
+  .conic-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, #d4a0a0, #c8a87c, #b8a0c0, #d4a0a0);
+  }
 
-.conic-border::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--angle),
-    #d4a0a0,
-    #c8a87c,
-    #b8a0c0,
-    #d4a0a0
-  );
-  animation: conicSpin 4s linear infinite;
-}
-
-.conic-border::after {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  background: inherit;
-  z-index: -1;
-}
-
-@keyframes conicSpin {
-  to { --angle: 360deg; }
+  .conic-border::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: inherit;
+    background: inherit;
+    z-index: -1;
+  }
 }
 
 /* ── Magnetic underline ── */

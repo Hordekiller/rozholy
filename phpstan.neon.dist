@@ -1,0 +1,26 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 2
+    paths:
+        - .
+    excludePaths:
+        analyseAndScan:
+            - vendor/
+            - node_modules (?)
+            - languages/
+            - assets/
+            - .git/
+            - patterns/
+            - styles/
+            - templates/
+            - parts/
+            - '*.css'
+            - '*.js'
+            - '*.json'
+            - composer.json
+            - package.json (?)
+            - package-lock.json (?)
+
+    ignoreErrors:

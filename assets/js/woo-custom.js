@@ -1,48 +1,58 @@
-/**
- * Rozholy WooCommerce Customizations
- */
-(function($) {
-  'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+  var addToCartButtons = document.querySelectorAll('.add_to_cart_button, .single_add_to_cart_button');
 
-  $(document.body).on('added_to_cart', function(event, fragments, cart_hash, $button) {
-    if ($button && $button.length) {
-      const originalText = $button.text();
-      $button.text(rozholyWoo?.i18n?.added || 'به سبد خرید اضافه شد!');
+  addToCartButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var originalText = this.textContent;
 
-      setTimeout(function() {
-        $button.text(originalText);
-      }, 2000);
-    }
+      if (typeof rozholyWoo !== 'undefined') {
+        this.textContent = rozholyWoo.i18n.added;
+        setTimeout(function () {
+          if (originalText) button.textContent = originalText;
+        }, 2000);
+      }
+    });
   });
 
-  $(document).on('change', 'select.orderby', function() {
-    $(this).closest('form').trigger('submit');
-  });
-
-  if (typeof rozholyWoo !== 'undefined') {
-    $(document.body).on('wc_fragments_refreshed', function() {
-      const count = rozholyWoo?.cartCount || 0;
-      $('#header-cart-count').text(count);
+  var orderBy = document.querySelector('select.orderby');
+  if (orderBy) {
+    orderBy.addEventListener('change', function () {
+      var form = this.closest('form');
+      if (form) form.submit();
     });
   }
 
-  $('.products .product').each(function() {
-    const $product = $(this);
-    const $link = $product.find('.woocommerce-loop-product__link');
-    const $title = $product.find('.woocommerce-loop-product__title');
-    const $price = $product.find('.price');
-    const $rating = $product.find('.star-rating');
-    const $button = $product.find('.button');
+  if (typeof rozholyWoo !== 'undefined') {
+    document.body.addEventListener('wc_fragments_refreshed', function () {
+      var countEl = document.getElementById('header-cart-count');
+      if (countEl) {
+        countEl.textContent = rozholyWoo.cartCount || '0';
+      }
+    });
+  }
 
-    $link.wrapInner('<div class="product-image-wrap"></div>');
+  document.querySelectorAll('.products .product').forEach(function (product) {
+    var link = product.querySelector('.woocommerce-loop-product__link');
+    var title = product.querySelector('.woocommerce-loop-product__title');
+    var price = product.querySelector('.price');
+    var rating = product.querySelector('.star-rating');
+    var button = product.querySelector('.button');
 
-    const $details = $('<div class="product-details"></div>');
-    if ($title.length) $details.append($title.detach());
-    if ($rating.length) $details.append($rating.detach());
-    if ($price.length) $details.append($price.detach());
+    if (link) {
+      var wrap = document.createElement('div');
+      wrap.className = 'product-image-wrap';
+      while (link.firstChild) wrap.appendChild(link.firstChild);
+      link.appendChild(wrap);
+    }
 
-    $product.append($details);
-    if ($button.length) $product.append($button);
+    var details = document.createElement('div');
+    details.className = 'product-details';
+
+    if (title) details.appendChild(title);
+    if (rating) details.appendChild(rating);
+    if (price) details.appendChild(price);
+
+    product.appendChild(details);
+    if (button) product.appendChild(button);
   });
-
-})(jQuery);
+});
